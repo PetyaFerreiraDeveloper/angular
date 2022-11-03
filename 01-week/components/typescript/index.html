@@ -1,1 +1,44 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./scr.js" async></script> -->
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div id="app"></div>
+    <script>
+      const app = document.getElementById("app");
+
+      const routes = {
+        "/": "<h1>HOME</h1>",
+        "/about": "<h1>ABOUT</h1>",
+        "/contact": "<h1>CONTACT</h1>",
+      };
+      function render(path) {
+        const contentForPath = routes[path];
+        if (!contentForPath) {
+          return;
+        }
+        app.innerHTML = contentForPath;
+      }
+      document.querySelectorAll("a").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          const { target } = e;
+          const path = target.getAttribute("href");
+          console.log(path);
+          render(path);
+        });
+      });
+      
+    </script>
+  </body>
+</html>
