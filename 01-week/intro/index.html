@@ -22,6 +22,12 @@
         "/about": "<h1>ABOUT</h1>",
         "/contact": "<h1>CONTACT</h1>",
       };
+
+      // this is for demo using the file protocol
+      function getPath(path) {
+        return path.replace('http://127.0.0.1:5500/01-week/intro/index.html', '').replace('index.html', '/');
+      }
+
       function render(path) {
         const contentForPath = routes[path];
         if (!contentForPath) {
@@ -29,16 +35,32 @@
         }
         app.innerHTML = contentForPath;
       }
+
       document.querySelectorAll("a").forEach((el) => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           const { target } = e;
           const path = target.getAttribute("href");
-          console.log(path);
           render(path);
+          history.pushState('', '', path);
         });
       });
+
+      render(window.location.pathname);
+
+      // render(getPath(window.location.toString())); // this is for demo using the file protocol
+
+      window.addEventListener('popstate', (e) => {
+        e.preventDefault();
+        render(location.pathname);
+      });
+
+      window.addEventListener('hashchange', (e) => {
+        e.preventDefault();
+        render(location.pathname);
+      });
       
+
     </script>
   </body>
 </html>
