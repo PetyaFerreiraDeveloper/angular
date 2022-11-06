@@ -1,5 +1,14 @@
 {
   "devDependencies": {
     "typescript": "^4.8.4"
-  }
+  },
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
