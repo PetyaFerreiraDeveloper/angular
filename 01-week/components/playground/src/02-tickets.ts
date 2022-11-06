@@ -1,9 +1,3 @@
-// interface iTicket {
-//     destination: string;
-//     price: number;
-//     status: string;
-// }
-
 class Ticket {
   destination: string;
   price: number;
@@ -16,17 +10,26 @@ class Ticket {
   }
 }
 
-function sortAllTickets(array:string[]) {
+function sortAllTickets(arr:string[], criteria: string) {
     let ticketsArray: Ticket[] = [];
-  array.forEach((element) => {
-    let arraySplitted = element.split('|');
-    let destination = arraySplitted[0];
-    let price = Number(arraySplitted[1]);
-    let status = arraySplitted[2];
-    let ticket = new Ticket(destination, price, status);
-    console.log(ticket);
-    ticketsArray.push(ticket);
-  });
+
+    for (let el of arr) {
+      let [destination, price, status] = el.split('|');
+      let newTicket = new Ticket(destination, +price, status)
+      ticketsArray.push(newTicket);
+    }
+    let sorted: Ticket[] = [];
+    if (criteria === 'destination' || criteria === 'status') {
+      sorted = ticketsArray.sort((a, b) => a[criteria].localeCompare(b[criteria]));
+    } else if (criteria === 'price') {
+      sorted = ticketsArray.sort((a, b) => a[criteria] - b[criteria])
+    }
+
+    sorted.forEach(ticket => {
+      console.log(ticket);
+    });
+
+    return sorted;
 }
 
 sortAllTickets([
@@ -34,4 +37,4 @@ sortAllTickets([
      'New York City|95.99|available',
      'New York City|95.99|sold',
      'Boston|126.20|departed'
-    ]);
+    ], 'destination');
