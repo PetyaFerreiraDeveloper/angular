@@ -1,0 +1,8 @@
+<ng-container>{{ userItem.firstName }}</ng-container>
+<span *ngIf="showLastNameValue"> {{ userItem.lastName }}</span>
+
+<button (click)="selectClickHandler($event)">Select</button>
+<div>
+    <ng-container>{{staticString}}</ng-container>
+    <ng-container>{{ staticNumber }}</ng-container>
+</div>
