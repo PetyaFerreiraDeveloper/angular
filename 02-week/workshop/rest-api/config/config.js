@@ -5,7 +5,6 @@ const config = {
     development: {
         port: process.env.PORT || 3000,
         dbURL: 'mongodb://localhost:27017/forum',
-        // dbURL: 'mongodb+srv://test1:test123@cluster0.qfegruh.mongodb.net/?retryWrites=true&w=majority',
         // dbURL: url,
         origin: ['http://localhost:5555', 'http://localhost:4200']
     },
