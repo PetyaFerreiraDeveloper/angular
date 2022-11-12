@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { IPost } from '../interfaces/post';
 
 @Component({
   selector: 'app-posts-list',
@@ -8,12 +9,21 @@ import { ApiService } from '../api.service';
 })
 export class PostsListComponent implements OnInit {
 
+  postList: IPost[] | null = null;
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.loadPosts().subscribe((value) => {
-      console.log(value);
-    })
+    this.apiService.loadPosts(5).subscribe({
+      next: (value) => {
+        this.postList = value;
+        console.log(value);
+        
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
 }
