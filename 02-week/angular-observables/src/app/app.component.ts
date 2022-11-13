@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MyClass } from './app.module';
+import { MyClass, myCustomToken } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +21,7 @@ export class AppComponent {
 
   constructor(
     // @Inject('Test') test: string
+    @Inject(myCustomToken) test1: string,
     test: MyClass
   ) {
     console.log(test);

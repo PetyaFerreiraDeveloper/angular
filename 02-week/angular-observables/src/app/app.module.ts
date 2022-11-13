@@ -1,4 +1,4 @@
-import { NgModule, Provider } from '@angular/core';
+import { InjectionToken, NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -10,11 +10,18 @@ export class MyClass {
   }
 }
 
+export const myCustomToken = new InjectionToken('Test'); // we use this construction to create a unique value
+
+// another way to create a unique value is with Symbol from JS
+
+Symbol('abc') === Symbol('abc'); // these two are different
+
 const myProvider: Provider = {
   // useValue: 123,
   // provide: "Test"
+  provide: myCustomToken,
   useClass: MyClass,
-  provide: MyClass
+  // provide: MyClass
 }
 
 @NgModule({
@@ -26,6 +33,7 @@ const myProvider: Provider = {
     BrowserModule
   ],
   providers: [
+    MyClass, // -> { useClass: MyClass, provide: MyClass }
     myProvider
   ],
   bootstrap: [AppComponent]
