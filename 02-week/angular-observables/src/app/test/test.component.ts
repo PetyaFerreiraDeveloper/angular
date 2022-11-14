@@ -1,6 +1,6 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { myCustomToken } from '../app.module';
+import { MyClass, myCustomToken } from '../app.module';
 
 @Component({
   selector: 'app-test',
