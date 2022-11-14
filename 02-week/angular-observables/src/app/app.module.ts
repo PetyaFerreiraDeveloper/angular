@@ -1,8 +1,11 @@
 import { InjectionToken, NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+import { UserListComponent } from './user-list/user-list.component';
+// import { UserService } from './user.service';
+// import { TestComponent } from './test/test.component';
 
 export class MyClass {
   constructor() {
@@ -27,14 +30,17 @@ const myProvider: Provider = {
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    UserListComponent,
+    // TestComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     MyClass, // -> { useClass: MyClass, provide: MyClass }
-    myProvider
+    myProvider,
+    // UserService
   ],
   bootstrap: [AppComponent]
 })
