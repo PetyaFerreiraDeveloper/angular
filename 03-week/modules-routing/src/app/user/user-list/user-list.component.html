@@ -1,0 +1,7 @@
+
+<button (click)="reloadUsersHandler()">Reload users</button>
+<ul id="user-list-container">
+    <li *ngFor="let user of userList">
+        {{user.username}}
+    </li>
+</ul>
