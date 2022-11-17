@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
+import { StandaloneCmpComponent } from './standalone-cmp/standalone-cmp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    StandaloneCmpComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
