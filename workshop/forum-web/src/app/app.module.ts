@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { MyModule } from './my-module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MyModule } from './my-module';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    AuthModule,
     MyModule.withProviders()
   ],
   providers: [],

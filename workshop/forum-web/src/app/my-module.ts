@@ -5,6 +5,7 @@ import {
   ModuleWithProviders,
   NgModule,
 } from '@angular/core';
+import { RouterModule, RouterState, Routes } from '@angular/router';
 
 //   ('Test': class --> instance )             ('Test': class, instance)
 // AppModule (Inj) <--> UserModule (Inj) <--> OtherModule(Inj) <-->...<--> Cmp1  (@Inject('Test'))
@@ -38,13 +39,31 @@ export class MyModule {
       ],
     };
   }
+
+  static forRoot(routes: Routes): ModuleWithProviders<RouterModule> {
+    return {
+      ngModule: RouterModule,
+      providers: [
+        {
+          provide: 'MAIN_ROUTES',
+          useValue: routes
+        }
+      ]
+    }
+  }
+
+  static forChildren(routes: Routes): ModuleWithProviders<RouterModule> {
+    return {
+      ngModule: RouterModule,
+      providers: [
+        {
+          provide: 'CHILD_ROUTES',
+          useValue: routes
+        }
+      ]
+    }
+  }
+
 }
 
-// static withProviders(): ModuleWithProviders<MyModule> {
-//   return {
-//     ngModule: MyModule,
-//     providers: [
 
-//     ]
-//   }
-// }
