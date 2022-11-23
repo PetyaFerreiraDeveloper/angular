@@ -5,16 +5,12 @@ import { FooterComponent } from './footer/footer.component';
 import { MyModule } from '../my-module';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeComponent } from './home/home.component';
-
-
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +27,6 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    HomeComponent
   ]
 })
 export class CoreModule { }

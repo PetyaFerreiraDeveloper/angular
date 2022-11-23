@@ -1,4 +1,4 @@
-<div class="new-theme-border">
+<div class="new-theme-border" *ngIf="isLoggedIn">
   <div class="header-background">
     <span>New Theme</span>
   </div>
@@ -22,8 +22,10 @@
       <p class="error">Post must be at least 10 characters long.</p>
     </div>
     <div class="new-theme-buttons">
-      <button class="cancel">Cancel</button>
+      <button class="cancel" routerLink="/home">Cancel</button>
       <button class="public">Post</button>
     </div>
   </form>
 </div>
+
+<app-login *ngIf="!isLoggedIn"></app-login>

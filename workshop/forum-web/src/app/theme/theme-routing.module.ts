@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from '../main/main.component';
+import { MainComponent } from './main/main.component';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeDetailComponent } from './theme-detail/theme-detail.component';
 import { ThemeListComponent } from './theme-list/theme-list.component';

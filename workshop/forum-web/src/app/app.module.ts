@@ -5,8 +5,6 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PostsListComponent } from './posts-list/posts-list.component';
-import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
 import { MyModule } from './my-module';
 import { AuthModule } from './auth/auth.module';
@@ -15,8 +13,6 @@ import { ThemeModule } from './theme/theme.module';
 @NgModule({
   declarations: [
     AppComponent,
-    PostsListComponent,
-    MainComponent,
   ],
   imports: [
     AuthModule,
