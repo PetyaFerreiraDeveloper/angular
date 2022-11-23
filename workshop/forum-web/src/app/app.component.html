@@ -1,3 +1,5 @@
 <app-header></app-header>
+<div [ngClass]="{ 'my-class' : showMyClass }">Hello</div>
+<button (click)="toggleMyClass()">Toggle</button>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
