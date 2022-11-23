@@ -1,4 +1,9 @@
 <div class="container">
-  <app-theme-list></app-theme-list>
-  <app-posts-list></app-posts-list>
+    
+    <main *ngIf="isLoggedIn">
+      <div class="theme-list">
+        <app-theme-list></app-theme-list>
+      </div>
+      <app-posts-list></app-posts-list>
+    </main>
 </div>

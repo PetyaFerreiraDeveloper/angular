@@ -12,7 +12,7 @@ export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) { 
     this.authService.user = {
       username: 'John'
-    }
+    } as any;
   }
 
 }

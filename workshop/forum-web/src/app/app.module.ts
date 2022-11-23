@@ -9,9 +9,9 @@ import { ThemeListComponent } from './theme-list/theme-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
-import { CommonModule } from '@angular/common';
 import { MyModule } from './my-module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +19,15 @@ import { AuthModule } from './auth/auth.module';
     ThemeListComponent,
     PostsListComponent,
     MainComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
+    AuthModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
-    AuthModule,
     MyModule.withProviders()
   ],
   providers: [],
