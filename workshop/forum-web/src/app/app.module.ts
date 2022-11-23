@@ -10,7 +10,6 @@ import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
 import { MyModule } from './my-module';
 import { AuthModule } from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
 import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ThemeModule } from './theme/theme.module';
     AppComponent,
     PostsListComponent,
     MainComponent,
-    HomeComponent,
   ],
   imports: [
     AuthModule,
