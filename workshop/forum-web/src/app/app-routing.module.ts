@@ -8,12 +8,16 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: MainComponent,
+    component: MainComponent
   },
   {
     path: 'home',
     component: HomeComponent,
   },
+  // {
+  //   path: 'theme',
+  //   component: MainComponent,
+  // },
   {
     path: 'not-found',
     component: PageNotFoundComponent,

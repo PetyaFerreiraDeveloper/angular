@@ -160,6 +160,7 @@ blockquote p:last-child {
 blockquote p.author {
   text-align: right;
 }
+
 @media (min-width: 800px) {
   html {
     font-size: 14px;
@@ -184,8 +185,6 @@ body {
     position: relative;
     min-height: 100vh;
 }
-
-
 
 h2 {
     text-align: center;
