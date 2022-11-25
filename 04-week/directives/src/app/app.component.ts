@@ -8,8 +8,8 @@ import { MyValueInjectionToken } from 'src/providers';
 })
 export class AppComponent {
   title = 'directives';
-  constructor(@Inject(MyValueInjectionToken) myValue: string) {
-    console.log(myValue);
+  // constructor(@Inject(MyValueInjectionToken) myValue: string) {
+  //   console.log(myValue);
     
-  }
+  // }
 }
