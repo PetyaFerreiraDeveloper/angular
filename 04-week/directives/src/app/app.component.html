@@ -1,1 +1,9 @@
-<div appMyRouterLink>Hello World</div>
+<div appMyRouterLink>Attribute directive</div>
+
+<br>
+<br>
+<br>
+<ng-template #myTemplate>Hello Again</ng-template>
+
+<div appMyRouterLink2="/path/to/something" [template]="myTemplate">Structural Directive</div>
+
