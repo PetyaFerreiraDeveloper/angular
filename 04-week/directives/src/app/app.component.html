@@ -6,4 +6,26 @@
 <ng-template #myTemplate>Hello Again</ng-template>
 
 <div appMyRouterLink2="/path/to/something" [template]="myTemplate">Structural Directive</div>
+<br>
+<br>
+<br>
 
+<button (click)="myIfValue = !myIfValue">Toggle my if value</button>
+
+<!-- First way for implementing MyIF directive -->
+<div *appMyIf="myIfValue">My If is working</div>
+
+
+<!-- Second way for implementing MyIF directive -->
+<ng-template [appMyIf]="myIfValue">
+    <div>
+        My if is working
+    </div>
+</ng-template>
+
+<!-- Third way for implementing MyIF directive -->
+<ng-template #tmp>
+    separate template for my if
+</ng-template>
+
+<ng-container [appMyIf]="myIfValue" [template]="tmp"></ng-container>

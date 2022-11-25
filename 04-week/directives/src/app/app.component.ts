@@ -8,6 +8,7 @@ import { MyValueInjectionToken } from 'src/providers';
 })
 export class AppComponent {
   title = 'directives';
+  myIfValue = true;
   // constructor(@Inject(MyValueInjectionToken) myValue: string) {
   //   console.log(myValue);
     

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyRouterLink2Directive } from './my-router-link2.directive';
+import { MyIfDirective } from './my-if.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyRouterLinkDirective,
-    MyRouterLink2Directive
+    MyRouterLink2Directive,
+    MyIfDirective
   ],
   imports: [
     BrowserModule,
